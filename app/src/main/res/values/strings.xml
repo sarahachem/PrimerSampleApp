@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Primer Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="CARD_HOLDER_NAME">Card Holder Name</string>
+    <string name="CARD_NUMBER">Card Number</string>
+    <string name="EXPIRATION_MONTH">Expiration Month</string>
+    <string name="EXPIRATION_YEAR">Expiration Year</string>
+    <string name="PAY">Pay</string>
+    <string name="EXPIRATION_DATE">Expiration date</string>
+    <string name="CARD_HOLDER_NAME_EMPTY">Card holder name empty</string>
+    <string name="WRONG_CARD_NUMBER">Wrong card number</string>
+    <string name="CANCEL">Cancel</string>
+    <string name="WRONG_CVV">Wrong cvv</string>
+    <string name="CARD">Card</string>
+    <string name="PAYPAL">Paypal</string>
+    <string name="WRONG_EXPIRATION_DATE">Wrong expiration date</string>
+    <string name="CVV">Cvv</string>
+</resources>
