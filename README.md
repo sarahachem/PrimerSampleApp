@@ -7,3 +7,5 @@ the file should contain the following information:
 
 The app consists of a bottomsheet with payment options. Once the payment option is selected, the proper screen with data to fill will appear. 
 To go back to the payment options sheet, simply press back.
+
+Please checkout the demo.mp4 video to view a demo of the app!
