@@ -31,15 +31,10 @@ subprojects {
             useIR = true
             // Treat all Kotlin warnings as errors
             allWarningsAsErrors = false
-            // Enable experimental coroutines APIs, including Flow
             freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
-            freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
             freeCompilerArgs += "-Xopt-in=kotlin.Experimental"
 
             freeCompilerArgs += "-Xjvm-default=all"
-
-            //ExperimentalUnsignedTypes is used for ecg parsing
-            freeCompilerArgs += "-Xuse-experimental=kotlin.ExperimentalUnsignedTypes"
 
             jvmTarget = "11"
         }

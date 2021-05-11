@@ -66,7 +66,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.3.0")
     implementation("com.squareup.okhttp3:logging-interceptor:3.8.0")
     implementation("joda-time:joda-time:2.9.9")
-    implementation("com.github.sarahachem:PrimerLibrary:0.1.0")
+    implementation("com.github.sarahachem:PrimerLibrary:1.0.0")
 
     testImplementation("junit:junit:4.+")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
