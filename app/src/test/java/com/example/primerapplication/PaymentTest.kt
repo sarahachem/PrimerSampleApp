@@ -2,12 +2,11 @@ package com.example.primerapplication
 
 import com.example.primerapplication.ui.CardInfoFormState
 import com.example.primerapplication.ui.PaypalInfoFormState
-import org.junit.Assert
+import com.primer.Card
+import com.primer.Paypal
 import org.junit.Test
 
 import org.junit.Assert.*
-import primer.Card
-import primer.Paypal
 
 class PaymentTest {
 
