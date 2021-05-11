@@ -15,4 +15,5 @@
     <string name="PAYPAL">Paypal</string>
     <string name="WRONG_EXPIRATION_DATE">Wrong expiration date</string>
     <string name="CVV">Cvv</string>
+    <string name="SELECT_PAYMENT">Select payment</string>
 </resources>

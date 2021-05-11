@@ -38,6 +38,7 @@ import com.example.primerapplication.ui.PaymentInstrumentOptionBottomSheet
 import com.example.primerapplication.ui.PaypalInfoViews
 import com.example.primerapplication.ui.rememberCardPaymentFormState
 import com.example.primerapplication.ui.rememberPaypalPaymentFormState
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -105,23 +106,27 @@ class MainActivity : AppCompatActivity() {
                             modifier = Modifier
                                 .height(height = 48.dp)
                                 .fillMaxWidth(),
-                            text = stringResource(id = R.string.PAY),
+                            text = if (shouldShowCardDetails == false &&
+                                shouldShowPaypalDetails == false
+                            ) stringResource(id = R.string.SELECT_PAYMENT) else stringResource(id = R.string.PAY),
                             enabled = when {
                                 shouldShowCardDetails == true -> cardFormState.isFormValid && (isLoading?.not()
                                     ?: false)
                                 shouldShowPaypalDetails == true -> paypalFormState.isFormValid && (isLoading?.not()
                                     ?: false)
-                                else -> false
+                                else -> true
                             },
                             isLoading = isLoading ?: false,
                             onClick = {
                                 localFocusManager.clearFocus()
                                 val paymentInstrument =
-                                    when (shouldShowCardDetails) {
-                                        true -> cardFormState.toPaymentInstrument()
-                                        else -> paypalFormState.toPaymentInstrument()
+                                    when {
+                                        shouldShowCardDetails == true -> cardFormState.toPaymentInstrument()
+                                        shouldShowPaypalDetails == true -> paypalFormState.toPaymentInstrument()
+                                        else -> null
                                     }
-                                viewModel.onPayClicked(paymentInstrument)
+                                paymentInstrument?.let { viewModel.onPayClicked(paymentInstrument) }
+                                    ?: scope.launch { bottomSheetState.show() }
                             })
                     }
                 )
