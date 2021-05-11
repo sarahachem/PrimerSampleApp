@@ -1,7 +1,7 @@
 This is a sample app to use the primer library and UI for payment tokenization. 
 To be able to use the app, you need to add a secure.properties file at the root of the project with the primer api key,
 in order to acquire a client token that gives you access to the primer API.
-the file should contain the following information:
+The file should contain the following information:
 
 `PRIMER_API_KEY=<api_key>`
 
