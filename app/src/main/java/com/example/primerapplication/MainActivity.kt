@@ -59,10 +59,14 @@ class MainActivity : AppCompatActivity() {
         val factory = PaymentViewModelFactory(application)
         viewModel = ViewModelProvider(this, factory).get(PaymentViewModel::class.java)
         viewModel.errorLiveData.observe(this) {
-            Toast.makeText(this@MainActivity, it, Toast.LENGTH_LONG).show()
+            it?.takeIf { it.isNotEmpty() }?.let {
+                Toast.makeText(this@MainActivity, it, Toast.LENGTH_LONG).show()
+            }
         }
         viewModel.tokenLiveData.observe(this) {
-            Toast.makeText(this@MainActivity, it, Toast.LENGTH_LONG).show()
+            it?.takeIf { it.isNotEmpty() }?.let {
+                Toast.makeText(this@MainActivity, it, Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -98,7 +102,9 @@ class MainActivity : AppCompatActivity() {
                     iconResId = iconResLiveData ?: null,
                     button = {
                         FilledButton(
-                            modifier = Modifier.height(height = 48.dp).fillMaxWidth(),
+                            modifier = Modifier
+                                .height(height = 48.dp)
+                                .fillMaxWidth(),
                             text = stringResource(id = R.string.PAY),
                             enabled = when {
                                 shouldShowCardDetails == true -> cardFormState.isFormValid && (isLoading?.not()

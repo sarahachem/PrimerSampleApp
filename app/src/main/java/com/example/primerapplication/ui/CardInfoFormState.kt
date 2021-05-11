@@ -1,6 +1,5 @@
 package com.example.primerapplication.ui
 
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -89,13 +88,11 @@ class PaypalInfoFormState {
 }
 
 @Composable
-@ExperimentalMaterialApi
 fun rememberCardPaymentFormState(): CardInfoFormState {
     return remember { CardInfoFormState() }
 }
 
 @Composable
-@ExperimentalMaterialApi
 fun rememberPaypalPaymentFormState(): PaypalInfoFormState {
     return remember { PaypalInfoFormState() }
 }
