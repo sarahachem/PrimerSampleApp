@@ -1,4 +1,4 @@
-This is a sample app to use the primer library and UI for payment tokenization. 
+This is a sample app to use retrofit 2, kotlin and compose. 
 To be able to use the app, you need to add a secure.properties file at the root of the project with the primer api key,
 in order to acquire a client token that gives you access to the primer API.
 The file should contain the following information:
