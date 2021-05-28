@@ -110,6 +110,8 @@ fun CardInfoViews(
         text = stringResource(id = R.string.EXPIRATION_DATE)
     )
     Spacer(Modifier.size(FourDp))
+    //TODO: this "/" character should be added automatically and the keyboard should be an numbers keyboard like the card number. I just wanted 
+    // to show how to use regex. 
     FormInputField(
         modifier = Modifier.fillMaxWidth(),
         type = InputType.Text,
